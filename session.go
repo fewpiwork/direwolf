@@ -178,6 +178,11 @@ func (session *Session) Cookies(URL string) Cookies {
 	return session.client.Jar.Cookies(parsedURL)
 }
 
+// cookiesJar get
+func (session *Session) GetCookieJar() *http.CookieJar {
+	return &session.client.Jar
+}
+
 // SetCookies set cookies of the url in Session.
 func (session *Session) SetCookies(URL string, cookies Cookies) {
 	if session.client.Jar == nil {
